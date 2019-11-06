@@ -1,0 +1,29 @@
+{
+    "name": "mokuyu/ank-swoole",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+    {
+        "name": "mokuyu",
+        "email": "735579768@qq.com"
+    }],
+    "require":
+    {
+        "mokuyu/ank-framework": "1.0.x-dev"
+    },
+    "autoload":
+    {
+        "psr-4":
+        {
+            "ank\\": "src"
+        }
+    },
+    "extra":
+    {
+        "branch-alias":
+        {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
