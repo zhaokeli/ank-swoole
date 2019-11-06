@@ -11,7 +11,7 @@ class Swoole
     public static function start(int $port = 9501)
     {
         global $_SERVER, $_GET, $_POST, $loader;
-        $http = new Swoole\Http\Server('0.0.0.0', $port);
+        $http = new Server('0.0.0.0', $port);
         //worker_num设置启动的worker进程数
         $http->set(
             [
@@ -21,8 +21,8 @@ class Swoole
                 // 3 =>NOTICE
                 // 4 =>WARNING
                 // 5 =>ERROR
-                'log_level'             => 0,
-                'log_file'              => __DIR__ . '/swoole.log',
+                // 'log_level'             => 0,
+                // 'log_file'              => __DIR__ . '/swoole.log',
                 'enable_coroutine'      => false, // 是否自动开启协程 默认 true
                 'enable_static_handler' => true,
                 'document_root'         => './',
@@ -32,12 +32,12 @@ class Swoole
         $http->on('start', function ($server) {
             // echo "Swoole http server is started at http://127.0.0.1:9501\n";
         });
-        $http->on('WorkerStart', function (swoole_server $server, $worker_id) {
+        $http->on('WorkerStart', function (\swoole_server $server, $worker_id) {
             //包含自动加载类
-            global $loader;
-            $loader = require __DIR__ . '/../vendor/autoload.php';
-            define('SITE_ROOT', str_replace('\\', '/', __DIR__));
-            define('IS_SWOOLE', true);
+            // global $loader;
+            // $loader = require __DIR__ . '/../vendor/autoload.php';
+            // define('SITE_ROOT', str_replace('\\', '/', __DIR__));
+            // define('IS_SWOOLE', true);
             // echo 'loader init!' . "\n";
             //框架入口
             // \ank\App::start();
