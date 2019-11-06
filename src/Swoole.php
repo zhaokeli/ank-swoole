@@ -8,10 +8,10 @@ use Swoole\Http\Server;
  */
 class Swoole
 {
-    public static function start()
+    public static function start(int $port = 9501)
     {
         global $_SERVER, $_GET, $_POST, $loader;
-        $http = new Swoole\Http\Server('0.0.0.0', 9501);
+        $http = new Swoole\Http\Server('0.0.0.0', $port);
         //worker_num设置启动的worker进程数
         $http->set(
             [
