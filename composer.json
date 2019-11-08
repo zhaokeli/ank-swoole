@@ -1,5 +1,5 @@
 {
-    "name": "mokuyu/ank-swoole",
+    "name": "ank/swoole",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
@@ -10,7 +10,7 @@
     }],
     "require":
     {
-        "mokuyu/ank-framework": "1.0.x-dev"
+        "ank/framework": "1.0.x-dev"
     },
     "autoload":
     {
