@@ -10,7 +10,7 @@
     }],
     "require":
     {
-        "ank/framework": "1.0.x-dev"
+        "ank/framework": "~1.1"
     },
     "autoload":
     {
